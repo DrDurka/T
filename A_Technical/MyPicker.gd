@@ -49,21 +49,21 @@ func _process(_delta):
 		return null
 	
 	var part_id = (Check(ch, part))
-	var currentLegs
+	var current_part
 	
 	
 	if ExclusionList.getList()[part].has(part_id):
-		currentLegs = part_id
+		current_part = part_id
 	elif part != "legs":
-		currentLegs = part_id
+		current_parts = part_id
 	else:
-		currentLegs = doll.state["legstype"]
-		if currentLegs == null:
+		current_part = doll.state["legstype"]
+		if current_part == null:
 			return null
 			
-	if cachedPart != currentLegs:
-		cachedPart = currentLegs
-		setValue(currentLegs)
+	if cachedPart != current_part:
+		cachedPart = current_part
+		setValue(current_part)
 
 func setValue(value):
 	
